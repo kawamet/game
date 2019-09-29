@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cats</title>
+</head>
+<body>
+
+    <h1>Siema!!!!!</h1>
+<!--    <b><p th:text="${nameModel}"></p></b>
+    <em><p th:text="${breedModel}"></p></em>
+    <p th:text="${colorModel}"</p>-->
+<h1>Dodawanie</h1>
+<form th:action="@{/cats}" th:object="${newCat}" method="post">
+<!--* odnosi sie do obiektu-->
+    <p>Name :<input type="text" th:field="*{name}"><br></p>
+    <p>Breed: <input type="text" th:field="*{breed}"><br></p>
+    <p> Color: <input type="text" th:field="*{color}"><br></p>
+    <p><input type="submit" name="add new cat"></p>
+</form>
+
+<h1>Usuwanie</h1>
+    <!--html nie na metody delete usimy uzywac post-->
+    <form th:action="@{/remove-cat}" th:object="${newCat}" method="post">
+        <p>Name :<input type="text" th:field="*{name}"><br></p>
+        <p><input type="submit" name="remove cat"></p>
+    </form>
+
+
+
+<h1>Wypisywanie</h1>
+<tr th:each="cat:${catListModel}">
+    <td th:text="${cat.getName()}"></td><br>
+    <td th:text="${cat.getBreed()}"></td><br>
+    <td th:text="${cat.getColor()}"></td><br>
+
+    <p>=================================</p>
+
+</tr>
+
+
+</body>
+</html>

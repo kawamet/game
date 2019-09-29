@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${random}"></p>
+<h1></h1>
+<form th:action="@{/game}" th:object="${numberFromUser}" method="post"> <!--tutaj jest klassa z atributu-->
+    <p>Name :<input type="text" th:field="*{userValue}"><br></p> <!--tutaj jest pole w tej klasie-->
+    <p><input type="submit" name="chcek"></p>
+</form>
+
+<p th:text="${result}"></p>
+Licznik: <p th:text="${count}"></p>
+
+</body>
+</html>
