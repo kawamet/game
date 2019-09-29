@@ -36,6 +36,7 @@ public class NumberController {
     public String checkNumber(@ModelAttribute RandomNumber randomNumber) {
         if (randomNumber.getUserValue() == random){
             result ="Tyle wygrac"; /*przekazuje to do atrybutu*/
+            count =0;
         }else {
             result = "NIE";
             count++;
